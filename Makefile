@@ -11,8 +11,8 @@ TESTOBJS	= driver.o lex.yy.o
 calc: $(OBJS)
 	$(CC) -o $@ $(OBJS) $(LIBS)
 
-driver: driver.c lex.yy.o 
-	$(CC) -o driver $^ $(LIBS)
+lex-driver: lex-driver.c lex.yy.o 
+	$(CC) -o lex-driver $^ $(LIBS)
 
 
 testscan: $(TESTOBJS) calc.tab.h
