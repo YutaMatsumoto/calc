@@ -18,11 +18,10 @@ lex-driver: lex-driver.c lex.yy.o
 testscan: $(TESTOBJS) calc.tab.h
 	$(CC) -o $@ $(TESTOBJS) $(LIBS)
 
-# calc.tab.c: calc.y
-	# $(YACC) -d $<
+calc.tab.c: calc.y
+	$(YACC) -d $<
 
-# lex.yy.c: calc.lex calc.tab.c
-lex.yy.c: calc.lex
+lex.yy.c: calc.lex calc.tab.c
 	$(LEX) $<
 
 clean:
